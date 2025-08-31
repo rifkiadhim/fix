@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", serif;
+  background-color: #b3cee5;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* biar aman di Android */
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.intro {
+  text-align: center;
+  color: #535353;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  opacity: 1;
+  transition: opacity 1s ease;
+  padding: 0 10px; /* biar tidak mepet di HP */
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background:#f7cac9;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #535353;
+  transition: 0.3s;
+  font-weight: bolder;
+}
+.btn:hover {
+  background: #b1acad;
+}
+
+.letter {
+  display: none;
+  background-color: #f5dddd;
+  color: #333;
+  padding: 30px 30px 30px 50px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: left;
+  position: relative;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  font-family: "Courier New", monospace;
+  overflow: visible;
+}
+
+.letter p {
+  margin-top: -20px;
+  overflow: hidden;
+}
+
+.signature {
+  position: absolute;
+  bottom: -20px;
+  right: 6px;
+  width: 180px;
+  opacity: 0; /* awalnya hilang */
+  pointer-events: none;
+  transform: rotate(-2deg);
+  transition: opacity 1s ease; /* animasi muncul */
+}
+
+/* --- RESPONSIVE UNTUK ANDROID / HP --- */
+@media screen and (max-width: 480px) {
+  .intro {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .letter {
+    width: 95%;
+    height: auto; /* tinggi menyesuaikan konten */
+    padding: 20px;
+    font-size: 0.85rem;
+  }
+
+  .signature {
+    width: 120px;
+    bottom: -10px;
+    right: 4px;
+  }
+}
